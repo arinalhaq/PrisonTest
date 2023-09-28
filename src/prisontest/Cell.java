@@ -12,9 +12,9 @@ public class Cell {
 
     private String name;
     private boolean isOpen;
-    private String securityCode;
+    private int securityCode;
 
-    public Cell(String name, boolean isOpen, String securityCode) {
+    public Cell(String name, boolean isOpen, int securityCode) {
         this.name = name;
         this.isOpen = isOpen;
         this.securityCode = securityCode;
@@ -28,18 +28,19 @@ public class Cell {
         return isOpen;
     }
 
-    public void openDoor(String securityCode) {
+    public void setIsOpen(int securityCode) {
         String status = this.isOpen ? "Opened" : "Closed";
         System.out.println("The Cell " + this.name + " is " + status);
 
-        if (this.securityCode == null ? securityCode != null : !this.securityCode.equals(securityCode)) {
+        if (this.securityCode != securityCode) {
             System.out.println("Security Code is Incorrect\n");
             return;
         }
 
+        // open/close the door
         this.isOpen = !this.isOpen;
+        
         status = this.isOpen ? "Opened" : "Closed";
-
-        System.out.println("Now, The door is " + status + "\n");
+        System.out.println("Now, The Cell" + this.name + " is " + status + "\n");
     }
 }

@@ -15,14 +15,14 @@ public class PrisonTest {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Cell c01 = new Cell("A01", false, "1234");
+        Cell c01 = new Cell("A01", false, 1234);
 
         Prisoner p01 = new Prisoner("Bubba", 2.08, 4, c01);
 
         p01.display(true);
-        c01.openDoor("cwreetve");
-        c01.openDoor("1234");
-        c01.openDoor("1234");
+        c01.setIsOpen(2443);
+        c01.setIsOpen(1234);
+        c01.setIsOpen(1234);
     }
 
 }
